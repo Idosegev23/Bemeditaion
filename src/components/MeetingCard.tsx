@@ -1,4 +1,4 @@
-import { Clock, MapPin, Users, Star } from 'lucide-react';
+import { Clock, MapPin, Users } from 'lucide-react';
 
 interface Meeting {
   id: string;

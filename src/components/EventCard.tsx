@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 
 interface Event {

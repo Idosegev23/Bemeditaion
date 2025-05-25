@@ -30,7 +30,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-text-dark mb-1">טלפון</h3>
                     <p className="text-text-light">050-123-4567</p>
-                    <p className="text-sm text-text-light">זמינים בימים א'-ה', 9:00-18:00</p>
+                    <p className="text-sm text-text-light">זמינים בימים א&apos;-ה&apos;, 9:00-18:00</p>
                   </div>
                 </div>
 
