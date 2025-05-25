@@ -38,6 +38,8 @@
 ## שינויים אחרונים
 - **העברת הפרויקט לתיקייה הראשית** לנוחות פיתוח
 - מחיקת תיקיית website/ הריקה
+- **חיבור ל-GitHub** - המאגר כעת מחובר ל-https://github.com/Idosegev23/Bemeditaion.git
+- commit ראשוני של כל הקוד בוצע בהצלחה
 - השרת רץ מהתיקייה הראשית
 
 ## מה מוכן לשימוש
@@ -69,3 +71,10 @@
 - האתר צריך לעבוד מעולה במובייל
 - חשוב לשמור על האווירה הרוחנית והרגועה
 - כל הטקסטים צריכים להיות בעברית תקינה מימין לשמאל 
+
+## Git & GitHub
+- **מאגר Git**: מאותחל ועובד
+- **GitHub remote**: https://github.com/Idosegev23/Bemeditaion.git
+- **Branch**: main
+- **Commit ראשוני**: "Initial commit: Be Meditation website - Next.js with Hebrew RTL support"
+- **39 קבצים** נוספו למאגר, 7,846 שורות קוד 
