@@ -40,6 +40,8 @@
 - מחיקת תיקיית website/ הריקה
 - **חיבור ל-GitHub** - המאגר כעת מחובר ל-https://github.com/Idosegev23/Bemeditaion.git
 - commit ראשוני של כל הקוד בוצע בהצלחה
+- **תיקון שגיאות ESLint** - הסרת imports לא בשימוש ותיקון תווי apostrophe
+- הבנייה עוברת בהצלחה (npm run build) ✅
 - השרת רץ מהתיקייה הראשית
 
 ## מה מוכן לשימוש
