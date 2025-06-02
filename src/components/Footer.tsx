@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Mail } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import MinimalQuote from './MinimalQuote';
 
 const Footer = () => {
   const navItems = [
@@ -19,29 +20,42 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary/10 border-t border-primary/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-soft-green border-t border-border-light">
+      <div className="container-custom">
+        {/* ציטוט מינימליסטי */}
+        <div className="section-padding">
+          <MinimalQuote />
+        </div>
+
+        <div className="divider"></div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-16">
           {/* Logo and Description */}
-          <div className="space-y-4">
-            <div className="text-2xl font-bold text-primary">
-              Be Meditation
+          <div className="space-y-6 fade-in">
+            <div>
+              <div className="font-display text-2xl font-medium text-text-highlighted mb-2">
+                Be Meditation
+              </div>
+              <div className="text-sm text-text-dark/60 font-light">
+                להקשיב לרגע. לנשום. להיות.
+              </div>
             </div>
-            <p className="text-text-light text-sm leading-relaxed">
+            <p className="text-body-large text-text-dark/80 leading-relaxed border-accent">
               מרכז למדיטציה ופיתוח אישי. מדיטציות פעילות של אושו, סדנאות וריטריטים 
-              במטרה ליצור מרחב של שקט, תנועה והתבוננות.
+              במטרה ליצור מרחב של שקט, תנועה והתבוננות פנימית.
             </p>
           </div>
 
           {/* Navigation Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-text-dark">ניווט באתר</h3>
-            <nav className="grid grid-cols-2 gap-2">
+          <div className="space-y-6 fade-in stagger-1">
+            <h3 className="text-h2 font-display font-medium text-text-highlighted">ניווט באתר</h3>
+            <nav className="grid grid-cols-2 gap-3">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-text-light hover:text-primary transition-colors duration-200 text-sm"
+                  className="text-text-dark hover:text-text-highlighted transition-colors duration-200 
+                           text-sm py-1"
                 >
                   {item.name}
                 </Link>
@@ -49,36 +63,52 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Social Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-text-dark">צרו קשר</h3>
-            <div className="flex space-x-4 space-x-reverse">
+          {/* Contact Information */}
+          <div className="space-y-6 fade-in stagger-2">
+            <h3 className="text-h2 font-display font-medium text-text-highlighted">צרו קשר</h3>
+            
+            {/* Contact Details */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-text-dark/80">
+                <Mail size={16} className="text-text-highlighted" />
+                <span className="text-sm">info@bemeditation.co.il</span>
+              </div>
+              <div className="flex items-center gap-3 text-text-dark/80">
+                <Phone size={16} className="text-text-highlighted" />
+                <span className="text-sm">050-123-4567</span>
+              </div>
+              <div className="flex items-center gap-3 text-text-dark/80">
+                <MapPin size={16} className="text-text-highlighted" />
+                <span className="text-sm">תל אביב, ישראל</span>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-3">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
                   <a
                     key={social.name}
                     href={social.href}
-                    className="text-text-light hover:text-primary transition-colors duration-200"
+                    className="p-3 rounded-lg border border-border-light bg-white-panoramic 
+                             hover:bg-text-highlighted hover:text-white-panoramic hover:border-text-highlighted
+                             transition-all duration-200"
                     aria-label={social.name}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <IconComponent size={24} />
+                    <IconComponent size={16} />
                   </a>
                 );
               })}
             </div>
-            <div className="text-sm text-text-light space-y-1">
-              <p>info@bemeditation.co.il</p>
-              <p>050-123-4567</p>
-            </div>
           </div>
         </div>
 
-        {/* Bottom Border */}
-        <div className="mt-8 pt-8 border-t border-primary/20 text-center">
-          <p className="text-text-light text-sm">
+        {/* Bottom */}
+        <div className="py-8 border-t border-border-light text-center">
+          <p className="text-text-dark/60 text-sm">
             © 2024 Be Meditation. כל הזכויות שמורות.
           </p>
         </div>

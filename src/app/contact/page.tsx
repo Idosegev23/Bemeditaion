@@ -1,15 +1,19 @@
-import HeroSection from "@/components/HeroSection";
 import { Mail, Phone, MessageCircle, MapPin } from 'lucide-react';
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <HeroSection
-        title="צרו קשר"
-        description="נשמח לענות על כל שאלה ולעזור לכם למצוא את הדרך המתאימה ביותר עבורכם במסע המדיטציה."
-        className="bg-gradient-to-b from-secondary/20 to-background"
-      />
+      {/* כותרת הדף */}
+      <section className="py-16 px-4 bg-gradient-to-b from-primary-calm/20 to-background">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-h1 font-display text-text-highlighted mb-6">
+            צרו קשר
+          </h1>
+          <p className="text-body-large text-text-dark/80 leading-relaxed">
+            נשמח לענות על כל שאלה ולעזור לכם למצוא את הדרך המתאימה ביותר עבורכם במסע המדיטציה.
+          </p>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section className="py-16 px-4">

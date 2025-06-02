@@ -1,4 +1,3 @@
-import HeroSection from "@/components/HeroSection";
 import { Camera, Heart, Users, Mountain } from 'lucide-react';
 
 export default function GalleryPage() {
@@ -35,12 +34,17 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <HeroSection
-        title="רגעים של נוכחות"
-        description="אוסף תמונות מרגעים קסומים – סדנאות, ריטריטים ומפגשים. לחצו לצפייה בגלריות לפי נושאים."
-        className="bg-gradient-to-b from-primary/20 to-background"
-      />
+      {/* כותרת הדף */}
+      <section className="py-16 px-4 bg-gradient-to-b from-primary-calm/20 to-background">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-h1 font-display text-text-highlighted mb-6">
+            גלריית תמונות
+          </h1>
+          <p className="text-body-large text-text-dark/80 leading-relaxed">
+            הציצו לתוך המרחב הקסום שלנו ורגעי השקט והשמחה מהמפגשים שלנו.
+          </p>
+        </div>
+      </section>
 
       {/* Gallery Categories */}
       <section className="py-16 px-4">

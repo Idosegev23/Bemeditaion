@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import HeroSection from "@/components/HeroSection";
 import MeditationCard from "@/components/MeditationCard";
 import MeditationModal from "@/components/MeditationModal";
 import meditationsData from "@/data/meditations.json";
@@ -33,12 +32,17 @@ export default function MeditationsPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <HeroSection
-        title="המדיטציות הפעילות של אושו"
-        description="המדיטציות האקטיביות של אושו מאפשרות לתנועה, שחרור והבנה לצוף מתוך הגוף – לפני שהשכל מתערב."
-        className="bg-gradient-to-b from-primary/20 to-background"
-      />
+      {/* כותרת הדף */}
+      <section className="py-16 px-4 bg-gradient-to-b from-primary-calm/20 to-background">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-h1 font-display text-text-highlighted mb-6">
+            המדיטציות הפעילות של אושו
+          </h1>
+          <p className="text-body-large text-text-dark/80 leading-relaxed">
+            המדיטציות האקטיביות של אושו מאפשרות לתנועה, שחרור והבנה לצוף מתוך הגוף – לפני שהשכל מתערב.
+          </p>
+        </div>
+      </section>
 
       {/* Meditations Grid */}
       <section className="py-16 px-4">

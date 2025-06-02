@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,57 +19,79 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white shadow-sm border-b border-primary/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <div className="text-2xl font-bold text-primary">
-              Be Meditation
-            </div>
-          </Link>
+    <header className="navbar-container">
+      {/* תמונת רקע */}
+      <div className="navbar-background">
+        <Image
+          src="/images/nbbg.png"
+          alt="רקע נאב בר"
+          fill
+          className="navbar-background-image"
+          priority
+          style={{ objectFit: 'cover' }}
+        />
+        {/* שכבת overlay עדינה */}
+        <div className="navbar-overlay"></div>
+      </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 space-x-reverse">
+      <div className="navbar-content">
+        {/* לוגו וטקסט - מימין */}
+        <Link href="/" className="navbar-logo-section">
+          <div className="navbar-logo">
+            <Image
+              src="/images/rnd_logo.png"
+              alt="לוגו Be Meditation"
+              width={60}
+              height={60}
+              className="navbar-logo-image"
+              priority
+            />
+          </div>
+          <div className="navbar-logo-text">
+            Be Meditation
+          </div>
+        </Link>
+
+        {/* Desktop Navigation - משמאל */}
+        <nav className="navbar-nav-desktop">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="navbar-nav-link"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="navbar-mobile-button"
+          aria-label="תפריט ניווט"
+        >
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="navbar-mobile-menu">
+          <nav className="navbar-mobile-nav">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-text-dark hover:text-primary transition-colors duration-200 font-medium"
+                className="navbar-mobile-link"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
           </nav>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-text-dark hover:text-primary hover:bg-background transition-colors"
-            aria-label="תפריט ניווט"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-primary/20">
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-text-dark hover:text-primary transition-colors duration-200 font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        )}
-      </div>
+      )}
     </header>
   );
 };

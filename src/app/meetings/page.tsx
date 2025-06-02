@@ -1,16 +1,20 @@
-import HeroSection from "@/components/HeroSection";
 import MeetingCard from "@/components/MeetingCard";
 import meetingsData from "@/data/meetings.json";
 
 export default function MeetingsPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <HeroSection
-        title="המפגשים שלנו"
-        description="אילו המפגשים שלנו – מרחבים פתוחים ונקודות מפגש שיאפשרו לכם להעמיק בתרגול וליצור קהילה תומכת."
-        className="bg-gradient-to-b from-primary/20 to-background"
-      />
+      {/* כותרת הדף */}
+      <section className="py-16 px-4 bg-gradient-to-b from-primary-calm/20 to-background">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-h1 font-display text-text-highlighted mb-6">
+            מפגשים קבועים
+          </h1>
+          <p className="text-body-large text-text-dark/80 leading-relaxed">
+            מפגשי מדיטציה קבועים המתקיימים מדי שבוע. כל מפגש הוא חוויה ייחודית של שקט, תנועה והתבוננות פנימית.
+          </p>
+        </div>
+      </section>
 
       {/* Meetings Grid */}
       <section className="py-16 px-4">

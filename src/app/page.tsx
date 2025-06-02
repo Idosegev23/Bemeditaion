@@ -1,92 +1,47 @@
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ValuesSection from "@/components/ValuesSection";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - חזון */}
+      {/* Hero Section מדיטטיבי עם תמונת רקע */}
       <HeroSection
-        title="דרך המדיטציה"
-        subtitle="Be Meditation"
-        description="Be Meditation נולד מתוך התשוקה להפיץ תרגול עמוק, פשוט ונגיש לכל אדם. מרחב של שקט, תנועה, והתבוננות – מתוך החיים עצמם."
-        className="bg-gradient-to-b from-primary/20 to-background"
+        title="להקשיב לרגע. לנשום. להיות."
       />
 
-      {/* About Section - אודות */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <div className="space-y-6">
-              <h2 className="text-h1 font-medium text-text-dark mb-6">
-                מי אנחנו
-              </h2>
-              <div className="space-y-4 text-text-light leading-relaxed">
-                <p>
-                  שמי [שם], מלווה תהליכים אישיים וקבוצתיים כבר למעלה מ-15 שנה. 
-                  המדיטציה עבורי היא שער לבית הפנימי – חיבור, ריפוי, שחרור.
-                </p>
-                <p>
-                  אנחנו מאמינים שהמדיטציה היא לא רק תרגול, אלא דרך חיים. 
-                  דרך שמאפשרת לנו להתחבר לעצמנו, לאחרים ולעולם סביבנו בצורה עמוקה יותר.
-                </p>
-                <p>
-                  במרכז שלנו תמצאו מגוון רחב של מדיטציות פעילות של אושו, 
-                  סדנאות וריטריטים המיועדים לכל רמות הניסיון.
-                </p>
-              </div>
-            </div>
+      {/* About Section מינימליסטי */}
+      <AboutSection 
+        name="[השם שלך]"
+        text="קוראים לי [השם שלך]. אני מלווה תהליכים אישיים וקבוצתיים כבר שנים, מתוך סקרנות עמוקה למה שקורה כשאנחנו פשוט עוצרים.
 
-            {/* Image Placeholder */}
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/30 to-secondary/30 rounded-lg flex items-center justify-center">
-                <div className="text-center text-text-light">
-                  <div className="w-24 h-24 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🧘‍♀️</span>
-                  </div>
-                  <p className="text-sm">תמונה של המדריך/ה</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+Be Meditation היא הדרך שלי לחלוק מרחבים של הקשבה, תנועה, ומדיטציה – שמחזירים אותנו אל עצמנו.
 
-      {/* Values Section */}
-      <section className="py-16 px-4 bg-primary/5">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-h1 font-medium text-text-dark mb-12">
-            הערכים שלנו
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <div className="w-16 h-16 mx-auto bg-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🌱</span>
-              </div>
-              <h3 className="text-xl font-medium text-text-dark">צמיחה אישית</h3>
-              <p className="text-text-light">
-                מרחב בטוח לחקירה עצמית והתפתחות אישית דרך המדיטציה והתבוננות.
-              </p>
-            </div>
+אני לא מחפש להוביל, אלא פשוט להזמין את מי שרוצה להיפגש, להיות, ולנשום."
+        imageSrc="/images/jivani.jpeg"
+        showPlaceholder={false}
+      />
 
-            <div className="space-y-4">
-              <div className="w-16 h-16 mx-auto bg-secondary/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🤝</span>
-              </div>
-              <h3 className="text-xl font-medium text-text-dark">קהילה תומכת</h3>
-              <p className="text-text-light">
-                יצירת קשרים אמיתיים עם אנשים הנמצאים במסע דומה של התפתחות רוחנית.
-              </p>
-            </div>
+      {/* Values Section החדש עם עיצוב משופר */}
+      <ValuesSection />
 
-            <div className="space-y-4">
-              <div className="w-16 h-16 mx-auto bg-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl">☮️</span>
-              </div>
-              <h3 className="text-xl font-medium text-text-dark">שלווה פנימית</h3>
-              <p className="text-text-light">
-                כלים מעשיים להשגת שקט נפשי ושלווה בתוך הקצב המהיר של החיים המודרניים.
-              </p>
+      {/* Call to Action Section */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="text-center fade-in">
+            <h2 className="text-h1 font-display text-text-highlighted mb-6">
+              מוכנים להתחיל את המסע?
+            </h2>
+            <p className="text-body-large text-text-dark/80 mb-8 max-w-lg mx-auto">
+              הצטרפו אלינו למדיטציה הקרובה וחוו את כוח השקט והנוכחות
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/events" className="btn-primary">
+                צפיה באירועים
+              </a>
+              <a href="/contact" className="btn-secondary">
+                צרו קשר
+              </a>
             </div>
           </div>
         </div>
