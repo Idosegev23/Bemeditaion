@@ -30,7 +30,7 @@ const Header = () => {
       {/* תמונת רקע */}
       <div className="navbar-background">
         <Image
-          src="/images/nbbg.png"
+          src="/images/nbbg.webp"
           alt="רקע נאב בר"
           fill
           className="navbar-background-image"

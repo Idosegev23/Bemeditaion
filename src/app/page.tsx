@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
+import MinimalQuote from "@/components/MinimalQuote";
 
 export default function Home() {
   return (
@@ -25,26 +26,9 @@ Be Meditation היא הדרך שלי לחלוק מרחבים של הקשבה, ת
       {/* Values Section החדש עם עיצוב משופר */}
       <ValuesSection />
 
-      {/* Call to Action Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="text-center fade-in">
-            <h2 className="text-h1 font-display text-text-highlighted mb-6">
-              מוכנים להתחיל את המסע?
-            </h2>
-            <p className="text-body-large text-text-dark/80 mb-8 max-w-lg mx-auto">
-              הצטרפו אלינו למדיטציה הקרובה וחוו את כוח השקט והנוכחות
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/events" className="btn-primary">
-                צפיה באירועים
-              </a>
-              <a href="/contact" className="btn-secondary">
-                צרו קשר
-              </a>
-            </div>
-          </div>
-        </div>
+      {/* ציטוט מעורר השראה */}
+      <section className="relative">
+        <MinimalQuote />
       </section>
     </div>
   );

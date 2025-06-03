@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface BreathingElementProps {
+export interface BreathingElementProps {
   variant?: 'circle' | 'lotus' | 'wave';
   size?: 'xs' | 'sm' | 'md' | 'lg';
   color?: 'primary-calm' | 'natural-brown' | 'text-highlighted' | 'soft-green';
@@ -83,4 +83,5 @@ const BreathingElement: React.FC<BreathingElementProps> = ({
   );
 };
 
+export { BreathingElement };
 export default BreathingElement; 
