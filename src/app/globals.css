@@ -701,3 +701,19 @@ input:focus-visible {
   z-index: 45;
   pointer-events: none;
 }
+
+/* אנימציית נשימה לאלמנטים */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
