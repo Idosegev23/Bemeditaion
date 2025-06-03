@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link';
-import { Facebook, Instagram, Mail, MapPin, Phone, Send, User, MessageSquare } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, Phone, Send, User } from 'lucide-react';
 import { useState } from 'react';
 
 const Footer = () => {

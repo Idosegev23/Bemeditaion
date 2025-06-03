@@ -111,9 +111,9 @@ export default function MinimalQuote() {
             <blockquote className="text-xl md:text-2xl lg:text-3xl font-display font-medium text-text-dark leading-relaxed mb-6 text-center">
               <span className="relative">
                 {/* תווי ציטוט דקורטיביים */}
-                <span className="absolute -top-4 -right-3 text-5xl text-primary-calm/50 font-serif leading-none">"</span>
+                <span className="absolute -top-4 -right-3 text-5xl text-primary-calm/50 font-serif leading-none">&ldquo;</span>
                 <span className="relative z-10 px-6">{currentQuote.text}</span>
-                <span className="absolute -bottom-8 -left-3 text-5xl text-primary-calm/50 font-serif leading-none">"</span>
+                <span className="absolute -bottom-8 -left-3 text-5xl text-primary-calm/50 font-serif leading-none">&rdquo;</span>
               </span>
             </blockquote>
           </div>
