@@ -63,7 +63,7 @@ const HeroSection = ({ title }: HeroSectionProps) => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `url(/images/herobg.png)`,
-        backgroundSize: 'cover',
+        backgroundSize: '100% 100%',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
       }}

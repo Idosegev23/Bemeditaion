@@ -8,15 +8,22 @@ import Image from 'next/image';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
+  // חלוקת פריטי הניווט לשתי קבוצות
+  const leftNavItems = [
     { name: 'בית', href: '/' },
     { name: 'אירועים', href: '/events' },
     { name: 'מפגשים', href: '/meetings' },
+  ];
+
+  const rightNavItems = [
     { name: 'מדיטציות', href: '/meditations' },
     { name: 'גלריה', href: '/gallery' },
     { name: 'מאמרים', href: '/articles' },
-    { name: 'צרו קשר', href: '/contact' },
+   
   ];
+
+  // כל הפריטים למובייל
+  const allNavItems = [...leftNavItems, ...rightNavItems];
 
   return (
     <header className="navbar-container">
@@ -28,21 +35,32 @@ const Header = () => {
           fill
           className="navbar-background-image"
           priority
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'fill' }}
         />
-        {/* שכבת overlay עדינה */}
-        <div className="navbar-overlay"></div>
       </div>
 
       <div className="navbar-content">
-        {/* לוגו וטקסט - מימין */}
+        {/* Desktop Navigation - שמאל */}
+        <nav className="navbar-nav-desktop">
+          {leftNavItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="navbar-nav-link"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* לוגו וטקסט - באמצע */}
         <Link href="/" className="navbar-logo-section">
           <div className="navbar-logo">
             <Image
               src="/images/rnd_logo.png"
               alt="לוגו Be Meditation"
-              width={60}
-              height={60}
+              width={80}
+              height={80}
               className="navbar-logo-image"
               priority
             />
@@ -52,9 +70,9 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Desktop Navigation - משמאל */}
+        {/* Desktop Navigation - ימין */}
         <nav className="navbar-nav-desktop">
-          {navItems.map((item) => (
+          {rightNavItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
@@ -79,7 +97,7 @@ const Header = () => {
       {isMenuOpen && (
         <div className="navbar-mobile-menu">
           <nav className="navbar-mobile-nav">
-            {navItems.map((item) => (
+            {allNavItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
