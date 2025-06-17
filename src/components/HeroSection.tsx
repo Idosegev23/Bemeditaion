@@ -2,11 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-interface HeroSectionProps {
-  title?: string;
-}
-
-const HeroSection = ({ title }: HeroSectionProps) => {
+const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

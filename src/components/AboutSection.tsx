@@ -1,8 +1,8 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface AboutSectionProps {
   title?: string;
-  name?: string;
   text?: string;
   imageSrc?: string;
   imageAlt?: string;
@@ -11,7 +11,6 @@ interface AboutSectionProps {
 
 const AboutSection: React.FC<AboutSectionProps> = ({
   title = "מי אנחנו",
-  name = "[שם]",
   text,
   imageSrc = "/images/jivani.jpeg",
   imageAlt = "תמונה של המדריך/ה",
@@ -142,9 +141,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 </p>
               </div>
             ) : (
-              <img 
+              <Image 
                 src={imageSrc} 
                 alt={imageAlt}
+                width={350}
+                height={350}
                 className="w-full max-w-sm md:max-w-xs sm:max-w-xs rounded-3xl object-cover shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 style={{
                   height: 'clamp(17.5rem, 25vw, 350px)',
