@@ -19,97 +19,85 @@ const Header = () => {
     { name: 'מדיטציות', href: '/meditations' },
     { name: 'גלריה', href: '/gallery' },
     { name: 'מאמרים', href: '/articles' },
-   
   ];
 
   // כל הפריטים למובייל
   const allNavItems = [...leftNavItems, ...rightNavItems];
 
   return (
-    <header className="navbar-container">
-      {/* תמונת רקע */}
-      <div className="navbar-background">
+    <header className="header-new-container">
+      {/* תמונת רקע עליונה עם תפריט בתחתית */}
+      <div className="header-image-section">
         <Image
-          src="/images/nbbg.webp"
-          alt="רקע נאב בר"
+          src="/images/navbarbg.webp"
+          alt="רקע עליון"
           fill
-          className="navbar-background-image"
+          className="header-background-image"
           priority
-          style={{ objectFit: 'fill' }}
+          style={{ objectFit: 'cover' }}
         />
-      </div>
+        
+        {/* תפריט ממוקם בחלק התחתון של התמונה */}
+        <div className="header-navbar-section">
+          <div className="header-navbar-content">
+            {/* Desktop Navigation - שמאל */}
+            <nav className="header-nav-desktop">
+              {leftNavItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="header-nav-link"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
 
-      <div className="navbar-content">
-        {/* Desktop Navigation - שמאל */}
-        <nav className="navbar-nav-desktop">
-          {leftNavItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="navbar-nav-link"
+            {/* ספייסר באמצע */}
+            <div className="header-nav-spacer"></div>
+
+            {/* Desktop Navigation - ימין */}
+            <nav className="header-nav-desktop">
+              {rightNavItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="header-nav-link"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="header-mobile-button"
+              aria-label="תפריט ניווט"
             >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* לוגו וטקסט - באמצע */}
-        <Link href="/" className="navbar-logo-section">
-          <div className="navbar-logo">
-            <Image
-              src="/images/rnd_logo.png"
-              alt="לוגו Be Meditation"
-              width={80}
-              height={80}
-              className="navbar-logo-image"
-              priority
-            />
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
-          <div className="navbar-logo-text">
-            Be Meditation
-          </div>
-        </Link>
 
-        {/* Desktop Navigation - ימין */}
-        <nav className="navbar-nav-desktop">
-          {rightNavItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="navbar-nav-link"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="navbar-mobile-button"
-          aria-label="תפריט ניווט"
-        >
-          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="navbar-mobile-menu">
-          <nav className="navbar-mobile-nav">
-            {allNavItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="navbar-mobile-link"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="header-mobile-menu">
+              <nav className="header-mobile-nav">
+                {allNavItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="header-mobile-link"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </header>
   );
 };

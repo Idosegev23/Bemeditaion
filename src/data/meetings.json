@@ -5,7 +5,7 @@
     "description": "מפגשים קבועים בערים שונות ברחבי הארץ. מרחב תומך לתרגול קבוצתי ושיתוף חוויות.",
     "schedule": "כל יום רביעי, 19:00-21:00",
     "locations": ["תל אביב", "ירושלים", "חיפה", "באר שבע"],
-    "image": "/images/meetings/weekly-practice.jpg",
+    "image": "weekly.webp",
     "category": "תרגול קבוצתי",
     "level": "כל הרמות"
   },
@@ -15,7 +15,7 @@
     "description": "עבודה פנימית עמוקה דרך תרגילי מודעות, נשימה ותנועה. מתמקד בשחרור דפוסים ישנים.",
     "schedule": "פעמיים בחודש, ימי שישי",
     "locations": ["מרכז Be Meditation"],
-    "image": "/images/meetings/be-work.jpg",
+    "image": "deep.webp",
     "category": "עבודה פנימית",
     "level": "מתקדמים"
   },
@@ -25,7 +25,7 @@
     "description": "ליווי אישי והדרכה פרטנית. מותאם לצרכים האישיים של כל מתרגל.",
     "schedule": "לפי תיאום מראש",
     "locations": ["מרכז Be Meditation", "אונליין"],
-    "image": "/images/meetings/personal-sessions.jpg",
+    "image": "personal.webp",
     "category": "ליווי אישי",
     "level": "כל הרמות"
   },
@@ -35,7 +35,7 @@
     "description": "מפגשים חברתיים לחיזוק הקהילה. שילוב של תרגול קל, שיתוף וחברות.",
     "schedule": "פעם בחודש, ימי שבת",
     "locations": ["מרכז Be Meditation", "בטבע"],
-    "image": "/images/meetings/community-days.jpg",
+    "image": "community.webp",
     "category": "קהילה",
     "level": "כל הרמות"
   }

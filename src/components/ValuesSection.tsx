@@ -17,21 +17,20 @@ interface ValuesSectionProps {
 
 const ValuesSection: React.FC<ValuesSectionProps> = ({
   title = "הערכים שלנו",
-  subtitle = "הדרך שבה אנו פועלים נובעת מערכים שמחוברים ללב, לחיים, ולאנשים שמגיעים לפגוש את עצמם.",
   values
 }) => {
   const defaultValues: Value[] = [
     {
-      name: "נוכחות",
-      description: "כל תרגול מתחיל ברגע הזה. בלי למהר, בלי לשפוט.",
+      name: "נוכחות ומודעות",
+      description: "כל תרגול מתחיל בלהיות ברגע הזה שבו החיים מתקיימים.",
       imagePlaceholder: "meditaion.webp",
-      content: "אנו מאמינים שהרגע הנוכחי הוא המקום היחיד שבו אמיתית התרחשות מתקיימת."
+      content: "אנו מאמינים שכל רגע הוא הזדמנות להיות במודעות ונוכחות."
     },
     {
       name: "פשטות ואותנטיות", 
-      description: "המדיטציה איננה דבר מורכב – היא חלק טבעי מאיתנו. אנחנו מאמינים בכנות ובביטוי אישי.",
+      description: "המדיטציה איננה דבר מורכב – היא חלק טבעי מאיתנו.",
       imagePlaceholder: "simple.webp",
-      content: "אין צורך בטכניקות מורכבות. כל אדם הוא עולם שלם. אנו מעודדים לבוא כמו שאתם, להביע את עצמכם באופן אמיתי."
+      content: "אנו מעודדים לבוא כמו שאתם, להביע את עצמכם באופן אמיתי."
     },
     {
       name: "קהילה",
@@ -40,10 +39,10 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({
       content: "יחד אנו חזקים יותר. הקהילה שלנו מספקת מרחב בטוח לחקירה, למידה וצמיחה."
     },
     {
-      name: "תנועה ונשימה",
-      description: "הגוף הוא שער. התנועה היא הדרך להרגיש.",
+      name: "תנועה",
+      description: "הגוף הוא שער. התנועה היא הדרך להרגיש, להתחבר ולהתבטא.",
       imagePlaceholder: "movment.webp",
-      content: "אנו מאמינים שהגוף והנפש מחוברים באופן בלתי נפרד. דרך תנועה מודעת ונשימה עמוקה."
+      content: "אנו מביאים מדיטציות בתנועה וריקוד שקל ומהנה יותר להתחבר דרכם אל עצמנו."
     }
   ];
 
@@ -51,46 +50,8 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({
 
   return (
     <>
-      {/* תוספת CSS לאנימציות הגלים */}
+      {/* תוספת CSS לאנימציות */}
       <style jsx>{`
-        .waves {
-          position: relative;
-          width: 100%;
-          height: 15vh;
-          margin-bottom: -7px;
-          min-height: 100px;
-          max-height: 150px;
-        }
-
-        .parallax > use {
-          animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
-        }
-        .parallax > use:nth-child(1) {
-          animation-delay: -2s;
-          animation-duration: 7s;
-        }
-        .parallax > use:nth-child(2) {
-          animation-delay: -3s;
-          animation-duration: 10s;
-        }
-        .parallax > use:nth-child(3) {
-          animation-delay: -4s;
-          animation-duration: 13s;
-        }
-        .parallax > use:nth-child(4) {
-          animation-delay: -5s;
-          animation-duration: 20s;
-        }
-        
-        @keyframes move-forever {
-          0% {
-            transform: translate3d(-90px,0,0);
-          }
-          100% { 
-            transform: translate3d(85px,0,0);
-          }
-        }
-
         .value-card {
           width: 100%;
           max-width: 22rem;
@@ -282,10 +243,6 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({
         }
 
         @media (max-width: 768px) {
-          .waves {
-            height: 40px;
-            min-height: 40px;
-          }
           .value-card {
             height: 24rem;
             max-width: 14rem;
@@ -337,68 +294,16 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({
         }
       `}</style>
 
-      <section className="relative overflow-hidden">
-        {/* Header עם גרדיאנט וגלים */}
-        <div 
-          className="relative text-center text-white"
-                style={{
-            background: 'linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%)'
-          }}
-        >
-          {/* תוכן Header */}
-          <div className="relative z-10 py-20 lg:py-32 md:py-24 sm:py-20">
-            <div className="container-custom">
-              <div className="flex flex-col justify-center items-center text-center min-h-[50vh]">
-                <h2 
-                  className="font-display text-h1 mb-8 text-white"
-                  style={{
-                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                    fontWeight: 300,
-                    letterSpacing: '2px'
-                  }}
-                >
-                  {title}
-                </h2>
-                
-                <p 
-                  className="text-body-large max-w-4xl mx-auto leading-relaxed text-white/90"
-                  style={{
-                    fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
-                    letterSpacing: '1px'
-                  }}
-                >
-                  {subtitle}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* גלים אנימטיביים */}
-          <div>
-            <svg 
-              className="waves" 
-              xmlns="http://www.w3.org/2000/svg" 
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28" 
-              preserveAspectRatio="none" 
-              shapeRendering="auto"
-            >
-              <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-              </defs>
-              <g className="parallax">
-                <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
-                <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
-              </g>
-            </svg>
-          </div>
-        </div>
-
-        {/* אזור התוכן עם הכרטיסים */}
-        <div className="relative bg-white py-20 lg:py-32">
+      <section className="relative">
+        {/* כותרת רגילה */}
+        <div className="bg-white py-20 lg:py-32">
           <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="font-display text-h1 mb-8 text-text-dark">
+                {title}
+              </h2>
+            </div>
+
             {/* 4 כרטיסי ערכים בשורה אחת */}
             <div className="cards-container">
               {finalValues.map((value, index) => (
@@ -412,7 +317,7 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({
                   {/* תמונת רקע אמיתית */}
                   <div 
                     className="card-image"
-                  style={{
+                    style={{
                       backgroundImage: `url(/images/${value.imagePlaceholder})`
                     }}
                   >
@@ -421,7 +326,7 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({
                   {/* תוכן הכרטיס */}
                   <h3 className="card-title">
                     {value.name}
-                </h3>
+                  </h3>
                   
                   <p className="card-description">
                     {value.description}
@@ -429,7 +334,7 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({
                   
                   <div className="card-content">
                     {value.content}
-          </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -447,10 +352,10 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({
                   ערכים אלה מנחים כל מפגש, כל תרגול, וכל רגע של חיבור אמיתי
                 </p>
               </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

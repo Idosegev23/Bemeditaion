@@ -50,170 +50,80 @@ body {
   letter-spacing: -0.011em;
 }
 
-/* ===== NAVBAR STYLING ===== */
-.navbar-container {
+/* ===== HEADER NEW STYLING ===== */
+.header-new-container {
   position: sticky;
   top: 0;
   width: 100vw;
-  height: 110px;
   z-index: 50;
   overflow: visible;
 }
 
-.navbar-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.navbar-background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
-
-.navbar-overlay {
-  /* הסרת שכבת הרקע - תמונת הרקע תהיה נקייה */
-}
-
-.navbar-content {
+/* תמונת הרקע העליונה */
+.header-image-section {
   position: relative;
-  z-index: 10;
+  width: 100%;
+  height: 270px; /* גובה התמונה החדש */
+  overflow: hidden;
+}
+
+.header-background-image {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* תפריט הניווט ממוקם בתוך התמונה */
+.header-navbar-section {
+  position: absolute;
+  bottom: 0;
+  top: 140px; /* מתחיל מגובה 140px */
+  left: 0;
+  right: 0;
+  /* הסרת הרקע החום */
+}
+
+.header-navbar-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 3rem;
+  height: 100%; /* ימלא את כל הגובה הזמין (130px) */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo Section */
-.navbar-logo-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-}
-
-.navbar-logo-section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 110px;
-  height: 110px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 200, 0.8) 60%, rgba(255, 245, 180, 0.4) 100%);
-  border-radius: 50%;
-  z-index: -1;
-  box-shadow: 
-    0 0 25px rgba(255, 250, 200, 0.9),
-    0 0 50px rgba(255, 245, 180, 0.7),
-    0 0 90px rgba(255, 240, 160, 0.5),
-    0 0 130px rgba(255, 235, 140, 0.3),
-    0 0 170px rgba(255, 230, 120, 0.2);
-}
-
-.navbar-logo-section::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  background: 
-    linear-gradient(0deg, transparent 40%, rgba(255, 245, 180, 0.2) 47%, rgba(255, 240, 160, 0.4) 50%, rgba(255, 245, 180, 0.2) 53%, transparent 60%),
-    linear-gradient(45deg, transparent 40%, rgba(255, 245, 180, 0.2) 47%, rgba(255, 240, 160, 0.4) 50%, rgba(255, 245, 180, 0.2) 53%, transparent 60%),
-    linear-gradient(90deg, transparent 40%, rgba(255, 245, 180, 0.2) 47%, rgba(255, 240, 160, 0.4) 50%, rgba(255, 245, 180, 0.2) 53%, transparent 60%),
-    linear-gradient(135deg, transparent 40%, rgba(255, 245, 180, 0.2) 47%, rgba(255, 240, 160, 0.4) 50%, rgba(255, 245, 180, 0.2) 53%, transparent 60%),
-    linear-gradient(22.5deg, transparent 40%, rgba(255, 250, 200, 0.15) 47%, rgba(255, 245, 180, 0.3) 50%, rgba(255, 250, 200, 0.15) 53%, transparent 60%),
-    linear-gradient(67.5deg, transparent 40%, rgba(255, 250, 200, 0.15) 47%, rgba(255, 245, 180, 0.3) 50%, rgba(255, 250, 200, 0.15) 53%, transparent 60%),
-    linear-gradient(112.5deg, transparent 40%, rgba(255, 250, 200, 0.15) 47%, rgba(255, 245, 180, 0.3) 50%, rgba(255, 250, 200, 0.15) 53%, transparent 60%),
-    linear-gradient(157.5deg, transparent 40%, rgba(255, 250, 200, 0.15) 47%, rgba(255, 245, 180, 0.3) 50%, rgba(255, 250, 200, 0.15) 53%, transparent 60%);
-  border-radius: 50%;
-  z-index: -2;
-  opacity: 0.8;
-}
-
-.navbar-logo-section:hover {
-  /* הסרת אפקט המעבר */
-}
-
-.navbar-logo {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  padding: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.navbar-logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-.navbar-logo-text {
-  font-family: 'Heebo', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--navbar-logo-text);
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
-  letter-spacing: 0.5px;
-  text-align: center;
-}
-
 /* Desktop Navigation */
-.navbar-nav-desktop {
+.header-nav-desktop {
   display: flex;
   align-items: center;
-  gap: 3rem; /* גדלתי ל-48px ריווח */
+  gap: 3rem;
 }
 
-.navbar-nav-desktop:first-child {
-  justify-content: flex-start;
+.header-nav-spacer {
+  flex: 1; /* יכבוס את המקום הריק באמצע */
 }
 
-.navbar-nav-desktop:last-child {
-  justify-content: flex-end;
-}
-
-.navbar-nav-link {
+.header-nav-link {
   font-family: 'Heebo', sans-serif;
-  font-size: 1.125rem; /* גדלתי מ-1rem ל-1.125rem */
-  font-weight: 600; /* חזק יותר מ-500 */
-  color: var(--navbar-text);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
   text-decoration: none;
   position: relative;
-  padding: 0.75rem 1rem; /* padding יותר גדול */
+  padding: 0.75rem 1rem;
   transition: all 0.3s ease;
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
   text-align: center;
 }
 
-.navbar-nav-link:hover {
-  color: var(--navbar-text-hover);
+.header-nav-link:hover {
+  color: var(--text-highlighted);
   transform: translateY(-2px);
 }
 
-.navbar-nav-link::after {
+.header-nav-link::after {
   content: '';
   position: absolute;
   bottom: 4px;
@@ -221,119 +131,118 @@ body {
   transform: translateX(50%);
   width: 0;
   height: 3px;
-  background: var(--navbar-text-hover);
+  background: var(--text-highlighted);
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
-.navbar-nav-link:hover::after {
+.header-nav-link:hover::after {
   width: 80%;
 }
 
 /* Mobile Button */
-.navbar-mobile-button {
+.header-mobile-button {
   display: none;
   padding: 0.75rem;
   border-radius: 50%;
-  background: var(--navbar-accent);
-  color: var(--text-dark);
+  background: var(--text-highlighted);
+  color: var(--white-panoramic);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-mobile-button:hover {
-  background: var(--text-highlighted);
-  color: var(--white-panoramic);
+.header-mobile-button:hover {
+  background: var(--text-dark);
   transform: scale(1.05);
 }
 
 /* Mobile Menu */
-.navbar-mobile-menu {
+.header-mobile-menu {
   position: absolute;
-  top: 110px;
+  top: 100%; /* מתחת לתפריט */
   left: 0;
-  width: 100%;
-  background: linear-gradient(135deg, var(--primary-calm), var(--soft-green));
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  right: 0;
+  background: rgba(255, 255, 255, 0.95); /* רקע לבן שקוף לתפריט נייד */
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.3s ease-out;
-  z-index: 40;
+  z-index: 50;
 }
 
-.navbar-mobile-nav {
+.header-mobile-nav {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.navbar-mobile-link {
+.header-mobile-link {
   font-family: 'Heebo', sans-serif;
-  font-size: 1.5rem; /* גדלתי מ-1.375rem */
-  font-weight: 600; /* חזק יותר */
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--text-dark);
   text-decoration: none;
-  padding: 1.2rem 1.5rem; /* padding יותר גדול */
+  padding: 1rem 1.5rem;
   border-radius: 0.75rem;
   transition: all 0.3s ease;
-  border-right: 3px solid transparent;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.navbar-mobile-link:hover {
+.header-mobile-link:hover {
   background: var(--white-panoramic);
-  border-right-color: var(--text-highlighted);
-  transform: translateX(-5px);
+  color: var(--text-highlighted);
+  transform: scale(1.02);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .navbar-content {
+  .header-image-section {
+    height: 200px; /* גובה קטן יותר במובייל */
+  }
+  
+  .header-navbar-section {
+    top: 100px; /* מתחיל מגובה נמוך יותר במובייל */
+  }
+  
+  .header-navbar-content {
     padding: 0 1.5rem;
     justify-content: center;
     position: relative;
   }
   
-  .navbar-nav-desktop {
+  .header-nav-desktop {
     display: none;
   }
   
-  .navbar-mobile-button {
-    display: block;
+  .header-nav-spacer {
+    display: none;
+  }
+  
+  .header-mobile-button {
+    display: flex;
     position: absolute;
     left: 1.5rem;
-  }
-  
-  .navbar-logo-section {
-    position: static;
-    transform: none;
-    left: auto;
-  }
-  
-  .navbar-logo-text {
-    font-size: 1.1rem;
-  }
-  
-  .navbar-logo {
-    width: 65px;
-    height: 65px;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar-content {
+  .header-image-section {
+    height: 150px; /* גובה עוד יותר קטן */
+  }
+  
+  .header-navbar-section {
+    top: 80px; /* מתחיל מגובה נמוך יותר במובייל קטן */
+  }
+  
+  .header-navbar-content {
     padding: 0 1rem;
   }
   
-  .navbar-mobile-button {
+  .header-mobile-button {
     left: 1rem;
-  }
-  
-  .navbar-logo-text {
-    font-size: 1rem;
   }
 }
 

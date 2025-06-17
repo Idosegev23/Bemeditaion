@@ -49,144 +49,133 @@ export default function MinimalQuote() {
   }
 
   return (
-    <div className="relative overflow-hidden w-full mb-8 border-b-2 border-white/30" style={{ isolation: 'isolate' }}>
-      {/* רקע ציטוטים */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/qoutebg.webp"
-          alt=""
-          fill
-          className="object-cover opacity-70"
-          sizes="100vw"
-        />
-      </div>
+    <div className="container mx-auto px-4 my-8">
+      <div className="relative overflow-hidden w-full h-64 md:h-80 rounded-3xl border border-white/20 backdrop-blur-sm bg-white/10" style={{ isolation: 'isolate' }}>
+        
+        {/* שכבת גרדיאנט עדינה */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-primary-calm/10 rounded-3xl"></div>
+        
+        {/* לוטוס - רקע גדול מאחורי הטקסט */}
+        <div className="absolute top-1/2 right-1/4 transform -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 opacity-10 z-0">
+          <Image
+            src="/images/lutos.webp"
+            alt=""
+            fill
+            className="object-contain animate-pulse"
+            sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 320px"
+          />
+        </div>
+        
+        {/* מנדלה גיאומטרית - רקע גדול מאחורי הטקסט */}
+        <div className="absolute top-1/2 left-1/4 transform -translate-y-1/2 w-44 h-44 md:w-60 md:h-60 lg:w-72 lg:h-72 opacity-8 z-0">
+          <Image
+            src="/images/geometry.webp"
+            alt=""
+            fill
+            className="object-contain breathe"
+            sizes="(max-width: 768px) 176px, (max-width: 1024px) 240px, 288px"
+          />
+        </div>
 
-      {/* שכבת גרדיאנט עדינה מעל התמונות */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-primary-calm/10"></div>
-      
-      {/* שכבת הפרדה תחתונה */}
-      <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-b from-transparent to-white/60"></div>
-      
-      {/* לוטוס - פינה ימנית עליונה */}
-      <div className="absolute top-6 right-6 w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 opacity-60 z-5">
-        <Image
-          src="/images/lutos.webp"
-          alt=""
-          fill
-          className="object-contain animate-pulse"
-          sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 160px"
-        />
-      </div>
-      
-      {/* מנדלה גיאומטרית - פינה שמאלית תחתונה */}
-      <div className="absolute bottom-6 left-6 w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 opacity-50 z-5">
-        <Image
-          src="/images/geometry.webp"
-          alt=""
-          fill
-          className="object-contain breathe"
-          sizes="(max-width: 768px) 80px, (max-width: 1024px) 112px, 144px"
-        />
-      </div>
+        {/* תוכן הציטוט */}
+        <div className="relative z-10 w-full h-full flex items-center justify-center px-6 md:px-12">
 
-      {/* תוכן הציטוט */}
-      <div className="relative z-10 w-full py-16 px-6 md:py-24 md:px-12 pb-20 md:pb-32">
+          {/* תוכן מרכזי */}
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
+            
+            {/* קו דקורטיבי עליון */}
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-px bg-gradient-to-r from-transparent via-text-highlighted/40 to-transparent w-16"></div>
+              <div className="mx-3 w-2 h-2 bg-text-highlighted/50 rounded-full shadow-sm"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-text-highlighted/40 to-transparent w-16"></div>
+            </div>
 
-        {/* תוכן מרכזי */}
-        <div className="text-center space-y-8 max-w-4xl mx-auto">
-          
-          {/* קו דקורטיבי עליון */}
-          <div className="flex items-center justify-center mb-8">
-            <div className="h-px bg-gradient-to-r from-transparent via-text-highlighted/40 to-transparent w-24"></div>
-            <div className="mx-4 w-3 h-3 bg-text-highlighted/50 rounded-full shadow-sm"></div>
-            <div className="h-px bg-gradient-to-r from-transparent via-text-highlighted/40 to-transparent w-24"></div>
-          </div>
-
-          {/* הציטוט */}
-          <div 
-            className={`transform transition-all duration-700 ease-out ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}
-          >
-            <blockquote className="text-xl md:text-2xl lg:text-3xl font-display font-medium text-text-dark leading-relaxed mb-6 text-center">
-              <span className="relative">
-                {/* תווי ציטוט דקורטיביים */}
-                <span className="absolute -top-4 -right-3 text-5xl text-primary-calm/50 font-serif leading-none">&ldquo;</span>
-                <span className="relative z-10 px-6">{currentQuote.text}</span>
-                <span className="absolute -bottom-8 -left-3 text-5xl text-primary-calm/50 font-serif leading-none">&rdquo;</span>
-              </span>
-            </blockquote>
-          </div>
-
-          {/* מחבר הציטוט */}
-          {currentQuote.author && (
+            {/* הציטוט */}
             <div 
-              className={`transform transition-all duration-700 ease-out delay-200 ${
+              className={`transform transition-all duration-700 ease-out ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}
             >
-              <cite className="block text-text-highlighted font-heebo font-medium text-lg not-italic">
-                — {currentQuote.author}
-              </cite>
+                             <blockquote className="text-xl md:text-2xl lg:text-4xl font-display font-medium text-text-dark leading-relaxed mb-4 text-center">
+                <span className="relative">
+                  {/* תווי ציטוט דקורטיביים */}
+                  <span className="absolute -top-2 -right-2 text-3xl text-primary-calm/50 font-serif leading-none">&ldquo;</span>
+                  <span className="relative z-10 px-4">{currentQuote.text}</span>
+                  <span className="absolute -bottom-4 -left-2 text-3xl text-primary-calm/50 font-serif leading-none">&rdquo;</span>
+                </span>
+              </blockquote>
             </div>
-          )}
 
-          {/* קו דקורטיבי תחתון */}
-          <div className="flex items-center justify-center my-8">
-            <div className="h-px bg-gradient-to-r from-transparent via-text-highlighted/40 to-transparent w-24"></div>
-            <div className="mx-4 w-3 h-3 bg-text-highlighted/50 rounded-full shadow-sm"></div>
-            <div className="h-px bg-gradient-to-r from-transparent via-text-highlighted/40 to-transparent w-24"></div>
-          </div>
-          
-          {/* כפתור לציטוט חדש */}
-          <div 
-            className={`transform transition-all duration-700 ease-out delay-400 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}
-          >
-            <button
-              onClick={getNewQuote}
-              disabled={isTransitioning}
-              className="group relative inline-flex items-center gap-3 px-8 py-4 
-                         bg-white/60 hover:bg-white/80
-                         text-text-highlighted font-heebo font-medium text-base
-                         rounded-full border border-text-highlighted/30
-                         transition-all duration-300 ease-out
-                         hover:shadow-lg hover:scale-105 hover:-translate-y-0.5
-                         disabled:opacity-50 disabled:cursor-not-allowed
-                         backdrop-blur-sm"
-            >
-              <span className="relative z-10">ציטוט חדש</span>
-              
-              {/* איקון רענון */}
-              <svg 
-                className={`w-5 h-5 transition-transform duration-300 ${
-                  isTransitioning ? 'animate-spin' : 'group-hover:rotate-180'
+            {/* מחבר הציטוט */}
+            {currentQuote.author && (
+              <div 
+                className={`transform transition-all duration-700 ease-out delay-200 ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
-                />
-              </svg>
-              
-              {/* הילה רכה */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-primary-calm/10 rounded-full 
-                              opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-            </button>
+                                 <cite className="block text-text-highlighted font-heebo font-medium text-lg not-italic">
+                  — {currentQuote.author}
+                </cite>
+              </div>
+            )}
+
+            {/* קו דקורטיבי תחתון */}
+            <div className="flex items-center justify-center my-4">
+              <div className="h-px bg-gradient-to-r from-transparent via-text-highlighted/40 to-transparent w-16"></div>
+              <div className="mx-3 w-2 h-2 bg-text-highlighted/50 rounded-full shadow-sm"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-text-highlighted/40 to-transparent w-16"></div>
+            </div>
+            
+            {/* כפתור לציטוט חדש */}
+            <div 
+              className={`transform transition-all duration-700 ease-out delay-400 ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              }`}
+            >
+              <button
+                onClick={getNewQuote}
+                disabled={isTransitioning}
+                                 className="group relative inline-flex items-center gap-2 px-6 py-3 
+                            bg-white/60 hover:bg-white/80
+                            text-text-highlighted font-heebo font-medium text-base
+                           rounded-full border border-text-highlighted/30
+                           transition-all duration-300 ease-out
+                           hover:shadow-lg hover:scale-105 hover:-translate-y-0.5
+                           disabled:opacity-50 disabled:cursor-not-allowed
+                           backdrop-blur-sm"
+              >
+                <span className="relative z-10">ציטוט חדש</span>
+                
+                {/* איקון רענון */}
+                <svg 
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    isTransitioning ? 'animate-spin' : 'group-hover:rotate-180'
+                  }`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
+                  />
+                </svg>
+                
+                {/* הילה רכה */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-primary-calm/10 rounded-full 
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </button>
+            </div>
+
           </div>
-
         </div>
-      </div>
 
-      {/* אפקט צללים רכים */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary-calm/5 
-                      shadow-minimal pointer-events-none"></div>
+        {/* אפקט צללים רכים */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary-calm/5 
+                        shadow-minimal pointer-events-none rounded-3xl"></div>
+      </div>
     </div>
   )
 } 
